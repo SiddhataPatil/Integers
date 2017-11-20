@@ -41,7 +41,7 @@ int Solution::ReverseInteger (int no)
     }
     reminder = no%10;
     //cout<<"R ="<<reminder<<endl;
-    rev_num=rev_num*10;
+    rev_num=rev_num*10; // check for overflow;
     //cout<<"rev_num="<<rev_num<<endl;
     check=overflow(rev_num);
     if(!check)
@@ -56,7 +56,7 @@ int Solution::ReverseInteger (int no)
       return -1;
     }
   }
-  if(negative)
+  if(negative) // if number is negative, reverse number should also be negative
   {
     return rev_num*-1;
   }
