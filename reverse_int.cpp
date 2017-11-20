@@ -18,12 +18,14 @@ public:
   int ReverseInteger (int no);
 }obj;
 
-bool overflow (int n)
+int overflow (int reminder, int rev_num)
 {
-    if (n<0)
-    return true;
-    else
-    return false;
+    if (rev_num > (INT_MAX / 10) || (rev_num == (INT_MAX / 10) \
+    && reminder > (INT_MAX % 10)))
+    {
+      return 0;
+    }
+    return 1;
 }
 
 int Solution::ReverseInteger (int no)
@@ -40,15 +42,12 @@ int Solution::ReverseInteger (int no)
       negative=true;
     }
     reminder = no%10;
-    //cout<<"R ="<<reminder<<endl;
-    rev_num=rev_num*10; // check for overflow;
-    //cout<<"rev_num="<<rev_num<<endl;
-    check=overflow(rev_num);
-    if(!check)
+    check=overflow(reminder,rev_num);
+    if(check)
     {
+      rev_num=rev_num*10;
       rev_num=rev_num+reminder;
       no=no/10;
-    //  cout<<"no="<<no<<endl;
     }
     else
     {
