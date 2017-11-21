@@ -120,10 +120,10 @@ int Solution::solve(vector<int> &A, int B, int C) {
 int main()
 {
   int A1[4] = {3,0,1,5};
-//  cout<<"Given array {3,0,1,5} how many numbers are 1 digit less than 2"<<endl;
+  cout<<"Given array {3,0,1,5} how many numbers are 1 digit less than 2"<<endl;
 	vector<int> A(A1, A1+sizeof(A1)/sizeof(A1[0]));
   int result=0;
   result = obj.solve(A,2,20) ;
-//  cout<<result<<endl;
+  cout<<result<<endl;
   return 0;
 }
